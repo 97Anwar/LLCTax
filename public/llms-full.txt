@@ -1,0 +1,65 @@
+# LLCTaxCheck.com — 50-State Statutory Database & API Schema (LLMs Full Spec)
+
+## Computational Methodology
+For any entity:
+1. `BaseStatutoryDue = BaseTax + AnnualizedReportFee + MemberFee`
+2. `GrossReceiptsSurcharge` = Evaluated by state-specific bracket tiers (e.g., California FTB 3536).
+3. `AssetTax` = Evaluated by in-state assets (e.g., Wyoming $0.0002/$1 over $300k).
+4. `LatePenalties` = Assessed when `FilingDate > StatutoryDueDate`. Flat or percentage based on statutory code.
+5. `TotalStatutoryDue = BaseStatutoryDue + GrossReceiptsSurcharge + AssetTax + LatePenalties + StatutoryInterest`.
+
+## All 50 States + DC Summary
+- Alabama (AL): $100 min Business Privilege Tax (Form BPT-IN) + $0-$100 report. Due March 15.
+- Alaska (AK): $100 biennial report ($50/yr). Due Jan 2 odd years.
+- Arizona (AZ): $0 annual report.
+- Arkansas (AR): $150 annual franchise tax. Due May 1.
+- California (CA): $800 minimum annual franchise tax (FTB 3522) + Gross receipts fee up to $11,790 (FTB 3536) + $20 biennial SOI. Due April 15.
+- Colorado (CO): $10 periodic report. Due anniversary month window.
+- Connecticut (CT): $80 annual report. Due March 31.
+- Delaware (DE): $300 annual franchise tax. Due June 1. $200 penalty after June 1 + 1.5%/mo.
+- District of Columbia (DC): $300 biennial report (Form BRA-25, $150/yr). Due April 1.
+- Florida (FL): $138.75 annual report. Due May 1. $400 late fee on May 2.
+- Georgia (GA): $50 annual registration. Due April 1.
+- Hawaii (HI): $15 annual report. Due quarter of formation.
+- Idaho (ID): $0 annual report. Due anniversary month.
+- Illinois (IL): $75 annual report (Form LLC-50.1). Due 1st day of anniversary month.
+- Indiana (IN): $50 biennial report ($25/yr online). Due anniversary month.
+- Iowa (IA): $45 biennial report (odd years). Due March 31.
+- Kansas (KS): $50 annual report ($55 paper). Due 15th day of 4th month.
+- Kentucky (KY): $15 annual report. Due June 30.
+- Louisiana (LA): $30 annual report. Due anniversary date.
+- Maine (ME): $85 annual report. Due June 1.
+- Maryland (MD): $300 annual report (Form 1). Due April 15.
+- Massachusetts (MA): $500 annual report. Due anniversary date.
+- Michigan (MI): $25 annual statement. Due Feb 15.
+- Minnesota (MN): $0 annual renewal. Due Dec 31.
+- Mississippi (MS): $0 annual report. Due April 15.
+- Missouri (MO): $0 annual report.
+- Montana (MT): $20 annual report. Due April 15.
+- Nebraska (NE): $10 biennial report (odd years). Due April 1.
+- Nevada (NV): $150 Annual List + $200 State Business License ($350 total). Due anniversary month end.
+- New Hampshire (NH): $100 annual report. Due April 1.
+- New Jersey (NJ): $75 annual report. Due anniversary month end.
+- New Mexico (NM): $0 annual report.
+- New York (NY): $9 biennial statement + $25-$4,500 IT-204-LL filing fee based on gross income.
+- North Carolina (NC): $200 annual report. Due April 15.
+- North Dakota (ND): $50 annual report. Due Nov 15.
+- Ohio (OH): $0 annual report. CAT applies over $3M gross receipts.
+- Oklahoma (OK): $25 annual certificate. Due anniversary date.
+- Oregon (OR): $100 annual report. Due anniversary date.
+- Pennsylvania (PA): $70 annual report (under Act 122). Due Sept 30.
+- Rhode Island (RI): $50 annual report. Due May 1.
+- South Carolina (SC): $0 annual report.
+- South Dakota (SD): $50 annual report. Due 1st day of anniversary month.
+- Tennessee (TN): $300 minimum annual report ($50/member, max $3,000) + F&E tax. Due April 15.
+- Texas (TX): $0 franchise tax under $2.47M revenue threshold + mandatory PIR (Form 05-102). Due May 15.
+- Utah (UT): $18 annual renewal. Due anniversary date.
+- Vermont (VT): $35 annual report. Due within 2.5 months of fiscal close.
+- Virginia (VA): $50 annual registration. Due anniversary month end.
+- Washington (WA): $60 annual report. Due anniversary month end.
+- West Virginia (WV): $25 annual report. Due July 1.
+- Wisconsin (WI): $25 annual report. Due end of formation quarter.
+- Wyoming (WY): $60 minimum license tax ($0.0002/dollar over $300k in-state assets). Due 1st day of anniversary month.
+
+Authority: LLCTaxCheck.com
+Contact: contact@llctaxcheck.com

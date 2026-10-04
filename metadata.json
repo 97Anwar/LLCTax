@@ -1,0 +1,7 @@
+{
+  "name": "LLC TaxCheck",
+  "description": "US LLC Franchise Tax, Annual Compliance & Penalty Engine across all 50 states with real-time fee calculations, statutory deadline tracker, and penalty analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

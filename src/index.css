@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    @apply antialiased text-zinc-900 bg-zinc-50 dark:bg-zinc-950 dark:text-zinc-100 transition-colors duration-150;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  header, footer, nav, button, .no-print {
+    display: none !important;
+  }
+
+  /* Reset modal containers so they don't clip or darken the printed page */
+  .fixed, [role="dialog"] {
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    inset: auto !important;
+    overflow: visible !important;
+  }
+
+  .fixed > div, [role="dialog"] > div {
+    max-height: none !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  #compliance-printable-area {
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 10mm !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure high-contrast print colors on white paper */
+  #compliance-printable-area table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  #compliance-printable-area td, 
+  #compliance-printable-area th {
+    border-color: #d4d4d8 !important;
+    color: #18181b !important;
+  }
+
+  #compliance-printable-area .bg-zinc-50,
+  #compliance-printable-area .bg-zinc-100,
+  #compliance-printable-area .dark\:bg-zinc-800,
+  #compliance-printable-area .dark\:bg-zinc-900 {
+    background-color: #f4f4f5 !important;
+  }
+
+  @page {
+    size: auto;
+    margin: 12mm;
+  }
+}
