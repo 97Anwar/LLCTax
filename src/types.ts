@@ -86,6 +86,8 @@ export type ActiveTab =
   | 'matrix' 
   | 'deadlines' 
   | 'methodology'
+  | 'guides'
+  | 'guide-detail'
   | 'privacy'
   | 'terms'
   | 'disclaimer'

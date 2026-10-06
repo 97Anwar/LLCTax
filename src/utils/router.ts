@@ -5,13 +5,18 @@ export interface RouteState {
   tab: ActiveTab;
   stateId: string;
   path: string;
+  guideSlug?: string;
 }
 
 export function getStateUrl(stateId: string): string {
   return `/states/${stateId}`;
 }
 
-export function getRouteUrl(tab: ActiveTab, stateId?: string): string {
+export function getGuideUrl(guideSlug: string): string {
+  return `/guides/${guideSlug}`;
+}
+
+export function getRouteUrl(tab: ActiveTab, stateId?: string, guideSlug?: string): string {
   switch (tab) {
     case 'calculator':
       return '/';
@@ -27,6 +32,10 @@ export function getRouteUrl(tab: ActiveTab, stateId?: string): string {
       return '/deadlines';
     case 'methodology':
       return '/methodology';
+    case 'guides':
+      return '/guides';
+    case 'guide-detail':
+      return guideSlug ? `/guides/${guideSlug}` : '/guides';
     case 'privacy':
       return '/privacy';
     case 'terms':
@@ -112,6 +121,25 @@ export function parseCurrentRoute(): RouteState {
       tab: 'methodology',
       stateId: 'california',
       path: '/methodology',
+    };
+  }
+
+  // Check /guides/:guideSlug
+  const guideMatch = path.match(/^\/guides\/([a-z0-9-]+)$/);
+  if (guideMatch) {
+    return {
+      tab: 'guide-detail',
+      stateId: 'california',
+      path,
+      guideSlug: guideMatch[1],
+    };
+  }
+
+  if (path === '/guides') {
+    return {
+      tab: 'guides',
+      stateId: 'california',
+      path: '/guides',
     };
   }
 

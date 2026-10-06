@@ -146,7 +146,7 @@ export const StateDetailPage: React.FC<StateDetailPageProps> = ({
             </div>
 
             <h1 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight">
-              {state.name} LLC Franchise Tax & Annual Filing Requirements
+              {state.name} LLC Franchise Tax &amp; Annual Filing Requirements (2026/2027)
             </h1>
 
             <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -719,9 +719,9 @@ export const StateDetailPage: React.FC<StateDetailPageProps> = ({
           <div className="bg-white dark:bg-zinc-900 rounded-xl p-5 sm:p-6 border border-zinc-200 dark:border-zinc-800 shadow-2xs space-y-4">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
-              <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
-                {state.name} Statutory Filing Schedule & Deadlines
-              </h3>
+              <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                {state.name} Statutory Filing Schedule &amp; Deadlines
+              </h2>
             </div>
             <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
               {state.complianceNote}
@@ -750,9 +750,9 @@ export const StateDetailPage: React.FC<StateDetailPageProps> = ({
           <div className="bg-white dark:bg-zinc-900 rounded-xl p-5 sm:p-6 border border-zinc-200 dark:border-zinc-800 shadow-2xs space-y-3">
             <div className="flex items-center gap-2 text-zinc-900 dark:text-zinc-100">
               <AlertTriangle className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
-              <h3 className="text-base font-semibold">
-                Enforcement Traps & Late Penalties in {state.name}
-              </h3>
+              <h2 className="text-base font-semibold">
+                Enforcement Traps &amp; Late Penalties in {state.name}
+              </h2>
             </div>
             <div className="p-3 bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/80 dark:border-zinc-800 rounded-lg text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
               {state.lateRuleText}
@@ -762,20 +762,36 @@ export const StateDetailPage: React.FC<StateDetailPageProps> = ({
             </p>
           </div>
 
+          {/* Foreign LLC & Out-of-State Transacting Business Rule */}
+          <div className="bg-white dark:bg-zinc-900 rounded-xl p-5 sm:p-6 border border-zinc-200 dark:border-zinc-800 shadow-2xs space-y-3">
+            <div className="flex items-center gap-2 text-zinc-900 dark:text-zinc-100">
+              <ShieldCheck className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
+              <h2 className="text-base font-semibold">
+                Foreign LLC Registration &amp; "Doing Business" Rules in {state.name}
+              </h2>
+            </div>
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Forming an LLC in a low-cost state (such as Delaware or Wyoming) does not exempt you from {state.name} taxes if you operate here. If your LLC maintains an office, employs remote workers, or has managing members physically located in {state.name}, state law considers your company to be <em>transacting intrastate business</em>.
+            </p>
+            <div className="p-3 bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/80 dark:border-zinc-800 rounded-lg text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
+              Under statutory guidelines, you must register as a <strong>Foreign LLC</strong> with {state.governingBody} and pay the annual {state.name} maintenance fee ({state.baseTax > 0 ? formatCurrency(state.baseTax) : formatCurrency(state.reportFee)}) in addition to your formation state’s annual costs.
+            </div>
+          </div>
+
           {/* Frequently Asked Questions */}
           <div className="bg-white dark:bg-zinc-900 rounded-xl p-5 sm:p-6 border border-zinc-200 dark:border-zinc-800 shadow-2xs space-y-4">
             <div className="flex items-center gap-2">
               <HelpCircle className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
-              <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+              <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
                 Frequently Asked Questions ({state.abbr} LLC)
-              </h3>
+              </h2>
             </div>
             <div className="space-y-3 pt-1">
               {taxMeta.faqs.map((faq, idx) => (
                 <div key={idx} className="border border-zinc-200/60 dark:border-zinc-800 rounded-lg p-3.5 space-y-1 text-xs">
-                  <h4 className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
                     {faq.question}
-                  </h4>
+                  </h3>
                   <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                     {faq.answer}
                   </p>
@@ -789,9 +805,9 @@ export const StateDetailPage: React.FC<StateDetailPageProps> = ({
         <div className="space-y-6">
           {/* Compare with Alternative States */}
           <div className="bg-white dark:bg-zinc-900 rounded-xl p-5 border border-zinc-200 dark:border-zinc-800 shadow-2xs space-y-3">
-            <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
               Compare {state.name} vs Other States
-            </h3>
+            </h2>
             <p className="text-xs text-zinc-500">
               Founders considering {state.name} frequently cross-compare these jurisdictions:
             </p>
@@ -834,9 +850,9 @@ export const StateDetailPage: React.FC<StateDetailPageProps> = ({
           {/* Full Directory CTA */}
           <div className="bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 text-center space-y-2.5">
             <Building2 className="w-6 h-6 text-zinc-400 mx-auto" />
-            <h4 className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">
-              Browse All 50 States & DC
-            </h4>
+            <h3 className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">
+              Browse All 50 States &amp; DC
+            </h3>
             <p className="text-xs text-zinc-500 leading-relaxed">
               Check annual report fees, franchise taxes, and statutory deadlines for any US state.
             </p>

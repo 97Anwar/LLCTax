@@ -100,11 +100,11 @@ Statutory Citation: ${result.state.statutoryCitation}`;
   const homeFAQs = useMemo(() => [
     {
       question: 'What is an LLC franchise tax versus an annual report fee?',
-      answer: 'An LLC annual report fee is an administrative filing fee paid to the Secretary of State to update public corporate records, registered agent details, and principal addresses. A franchise tax (such as California\'s $800 FTB 3522 or Delaware\'s $300 annual tax) is a statutory tax levied by state revenue departments for the legal privilege of existing as a limited liability company, regardless of business profit or operational activity.',
+      answer: 'An LLC annual report fee is an administrative filing fee paid to the Secretary of State to update public corporate records, registered agent details, and principal addresses. A franchise tax (such as California\'s $800 FTB 3522 or Delaware\'s $400 annual tax under HB 400) is a statutory tax levied by state revenue departments for the legal privilege of existing as a limited liability company, regardless of business profit or operational activity.',
     },
     {
       question: 'How much does it cost to maintain an LLC each year by state?',
-      answer: 'Across all 50 states, ongoing LLC maintenance costs range from $0 to over $820 per year. The national average baseline fee is approximately $91/year. High-cost states include California ($800 minimum franchise tax), Massachusetts ($500 annual report), Nevada ($350 total annual fees), Delaware ($300 annual tax), and Tennessee ($300 minimum filing fee). Zero-fee states include Arizona, Idaho, Missouri, Ohio, and South Carolina ($0 mandatory periodic fee).',
+      answer: 'Across all 50 states, ongoing LLC maintenance costs range from $0 to over $820 per year. The national average baseline fee is approximately $91/year. High-cost states include California ($800 minimum franchise tax), Massachusetts ($500 annual report), Delaware ($400 annual tax under HB 400), Nevada ($350 total annual fees), and Tennessee ($300 minimum filing fee). Zero-fee states include Arizona, Idaho, Missouri, Ohio, and South Carolina ($0 mandatory periodic fee).',
     },
     {
       question: 'Which states have no annual report fee or franchise tax for LLCs?',
@@ -112,15 +112,15 @@ Statutory Citation: ${result.state.statutoryCitation}`;
     },
     {
       question: 'Do inactive or zero-revenue LLCs still have to pay franchise taxes and file annual reports?',
-      answer: 'Yes, in almost all states. Franchise taxes (such as California\'s $800 FTB 3522 and Delaware\'s $300 fee) and Secretary of State annual reports are statutory levies for entity existence and limited liability privilege, not business profitability. Dormant or zero-revenue LLCs must continue filing reports and paying statutory minimums until formal Articles of Dissolution or Cancellation are approved by the Secretary of State.',
+      answer: 'Yes, in almost all states. Franchise taxes (such as California\'s $800 FTB 3522 and Delaware\'s $400 fee) and Secretary of State annual reports are statutory levies for entity existence and limited liability privilege, not business profitability. Dormant or zero-revenue LLCs must continue filing reports and paying statutory minimums until formal Articles of Dissolution or Cancellation are approved by the Secretary of State.',
     },
     {
       question: 'Can I form a Delaware or Wyoming LLC to avoid California or New York taxes?',
-      answer: 'No. If you reside, employ staff, lease an office, or conduct active business operations from California or New York, you are legally considered "doing business" in that home state. Under California Revenue and Taxation Code § 23101 and New York Tax Law, you must register your Delaware LLC as a Foreign LLC in your home state and pay the local franchise taxes (e.g., California\'s $800 minimum tax) on top of Delaware\'s $300 annual tax.',
+      answer: 'No. If you reside, employ staff, lease an office, or conduct active business operations from California or New York, you are legally considered "doing business" in that home state. Under California Revenue and Taxation Code § 23101 and New York Tax Law, you must register your Delaware LLC as a Foreign LLC in your home state and pay the local franchise taxes (e.g., California\'s $800 minimum tax) on top of Delaware\'s $400 annual tax.',
     },
     {
       question: 'What happens if an LLC misses its state annual filing deadline?',
-      answer: 'State penalties escalate quickly. For example, Florida assesses an immediate, non-negotiable $400 statutory late fee on May 2. Delaware charges $200 plus 1.5% monthly interest. Prolonged delinquency leads to administrative dissolution or corporate charter forfeiture, stripping members of their limited liability protection and exposing them to personal legal liability.',
+      answer: 'State penalties escalate quickly. For example, Florida assesses an immediate, non-negotiable $400 statutory late fee on May 2. Delaware charges $200 plus 1.5% monthly interest on the $600 delinquent balance. Prolonged delinquency leads to administrative dissolution or corporate charter forfeiture, stripping members of their limited liability protection and exposing them to personal legal liability.',
     },
   ], []);
 
@@ -132,7 +132,7 @@ Statutory Citation: ${result.state.statutoryCitation}`;
       keywords: [
         'LLC annual report fee by state',
         'LLC franchise tax calculator',
-        'Delaware LLC annual tax 300',
+        'Delaware LLC annual tax 400 HB 400',
         'California 800 minimum franchise tax FTB 3522',
         'Florida LLC 400 late fee Sunbiz',
         'Texas franchise tax no tax due threshold PIR',
@@ -929,7 +929,7 @@ Statutory Citation: ${result.state.statutoryCitation}`;
               <h3 className="font-semibold text-sm">State Franchise Taxes & Minimum Levies</h3>
             </div>
             <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Statutory privilege taxes assessed by state departments of revenue for the right to operate with limited liability. These taxes (e.g., California’s $800 FTB 3522 or Delaware’s $300 tax) are mandatory regardless of whether your business earned revenue or operated at a net loss.
+              Statutory privilege taxes assessed by state departments of revenue for the right to operate with limited liability. These taxes (e.g., California’s $800 FTB 3522 or Delaware’s $400 tax under HB 400) are mandatory regardless of whether your business earned revenue or operated at a net loss.
             </p>
           </div>
         </div>
@@ -947,9 +947,9 @@ Statutory Citation: ${result.state.statutoryCitation}`;
             >
               <div className="flex items-center justify-between">
                 <strong className="font-semibold text-sm text-zinc-900 dark:text-zinc-100 group-hover:underline">
-                  Delaware LLC Tax
+                  Delaware LLC Tax (HB 400)
                 </strong>
-                <span className="font-mono text-zinc-500">$300/yr</span>
+                <span className="font-mono text-zinc-500">$400/yr</span>
               </div>
               <p className="text-zinc-500 mt-1">
                 Flat annual franchise tax due June 1. Strict $200 penalty + 1.5% monthly interest on delinquency.
@@ -1070,7 +1070,7 @@ Statutory Citation: ${result.state.statutoryCitation}`;
                         <span>Delaware</span>
                       </div>
                     </td>
-                    <td className="py-2.5 px-3 font-mono font-semibold text-zinc-900 dark:text-zinc-100">$300.00 / yr</td>
+                    <td className="py-2.5 px-3 font-mono font-semibold text-zinc-900 dark:text-zinc-100">$400.00 / yr</td>
                     <td className="py-2.5 px-3 text-zinc-600 dark:text-zinc-400">June 1 annually</td>
                     <td className="py-2.5 px-3 font-mono text-zinc-900 dark:text-zinc-200">+$200 + 1.5%/mo</td>
                     <td className="py-2.5 px-3 text-zinc-500">Graduated (0% to 6.6%)</td>

@@ -130,7 +130,7 @@ export const MethodologyView: React.FC = () => {
               Inactive or zero-revenue entities
             </h3>
             <p className="leading-relaxed">
-              In states like California ($800) and Delaware ($300), franchise taxes are excise taxes for the legal privilege of entity existence and apply regardless of business activity. Other states, like Arizona ($0) or Texas (under threshold), assess $0 in baseline franchise taxes.
+              In states like California ($800) and Delaware ($400 under HB 400), franchise taxes are excise taxes for the legal privilege of entity existence and apply regardless of business activity. Other states, like Arizona ($0) or Texas (under threshold), assess $0 in baseline franchise taxes.
             </p>
           </div>
         </div>

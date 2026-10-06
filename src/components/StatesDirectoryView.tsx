@@ -36,11 +36,11 @@ export const StatesDirectoryView: React.FC = () => {
       faqs: [
         {
           question: 'What states do not require an annual report for an LLC?',
-          answer: 'Arizona, Missouri, Ohio, and South Carolina do not require an annual report or periodic fee for limited liability companies. Pennsylvania requires a decennial report (once every 10 years). However, entities in these states may still be subject to state income, gross receipts, or local excise taxes.',
+          answer: 'Arizona, Missouri, Ohio, and South Carolina do not require a mandatory annual report fee for domestic LLCs. (Pennsylvania previously had a 10-year decennial report, but transitioned under Act 122 to a $7 annual report due Sept 30). However, entities in these states may still be subject to state income, commercial activity (such as Ohio CAT over $3M), or local excise taxes.',
         },
         {
           question: 'Which states have the most expensive annual fees for LLCs?',
-          answer: 'California charges an $800 minimum annual franchise tax plus potential gross receipts fees up to $11,790. Massachusetts charges a $500 annual report fee. Delaware charges a flat $300 annual franchise tax. Nevada charges $350 annually ($150 annual list + $200 state business license).',
+          answer: 'California charges an $800 minimum annual franchise tax plus potential gross receipts fees up to $11,790. Massachusetts charges a $500 annual report fee. Delaware charges a flat $400 annual franchise tax (increased under HB 400). Nevada charges $350 annually ($150 annual list + $200 state business license).',
         },
         {
           question: 'Which states have no state personal income tax on LLC profits?',

@@ -16,7 +16,7 @@ For any entity:
 - California (CA): $800 minimum annual franchise tax (FTB 3522) + Gross receipts fee up to $11,790 (FTB 3536) + $20 biennial SOI. Due April 15.
 - Colorado (CO): $10 periodic report. Due anniversary month window.
 - Connecticut (CT): $80 annual report. Due March 31.
-- Delaware (DE): $300 annual franchise tax. Due June 1. $200 penalty after June 1 + 1.5%/mo.
+- Delaware (DE): $400 annual franchise tax (HB 400). Due June 1. $200 penalty after June 1 + 1.5%/mo on $600 delinquent balance.
 - District of Columbia (DC): $300 biennial report (Form BRA-25, $150/yr). Due April 1.
 - Florida (FL): $138.75 annual report. Due May 1. $400 late fee on May 2.
 - Georgia (GA): $50 annual registration. Due April 1.
@@ -47,7 +47,7 @@ For any entity:
 - Ohio (OH): $0 annual report. CAT applies over $3M gross receipts.
 - Oklahoma (OK): $25 annual certificate. Due anniversary date.
 - Oregon (OR): $100 annual report. Due anniversary date.
-- Pennsylvania (PA): $70 annual report (under Act 122). Due Sept 30.
+- Pennsylvania (PA): $7 annual report (under Act 122). Due Sept 30.
 - Rhode Island (RI): $50 annual report. Due May 1.
 - South Carolina (SC): $0 annual report.
 - South Dakota (SD): $50 annual report. Due 1st day of anniversary month.

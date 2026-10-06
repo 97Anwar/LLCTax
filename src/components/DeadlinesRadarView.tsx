@@ -51,7 +51,7 @@ export const DeadlinesRadarView: React.FC<DeadlinesRadarViewProps> = ({ onSelect
       cutoffDate: 'June 1',
       penalty: '$200 Penalty + 1.5%/mo Interest',
       headline: 'June 1 Annual Tax Cutoff',
-      description: 'Delaware LLCs must pay $300 by June 1. Delinquency on June 2 incurs an immediate $200 penalty plus 1.5% compounding monthly interest on the $500 balance.',
+      description: 'Delaware LLCs must pay $400 by June 1 (under HB 400). Delinquency on June 2 incurs an immediate $200 penalty plus 1.5% compounding monthly interest on the $600 delinquent balance.',
       citation: '6 Del. C. § 18-1107',
     },
     {
@@ -113,7 +113,7 @@ export const DeadlinesRadarView: React.FC<DeadlinesRadarViewProps> = ({ onSelect
         { state: 'Arkansas', due: 'May 1', form: 'Franchise Tax Report', id: 'arkansas' },
         { state: 'Rhode Island', due: 'May 1', form: 'Form 632 Annual Report', id: 'rhode_island' },
         { state: 'Texas', due: 'May 15', form: 'Form 05-102 PIR (Mandatory)', id: 'texas' },
-        { state: 'Delaware', due: 'June 1', form: 'Delaware LLC Franchise Tax ($300)', id: 'delaware' },
+        { state: 'Delaware', due: 'June 1', form: 'Delaware LLC Franchise Tax ($400 under HB 400)', id: 'delaware' },
         { state: 'Maine', due: 'June 1', form: 'Annual Report', id: 'maine' },
         { state: 'California (Fee)', due: 'June 15', form: 'FTB 3536 Gross Surcharge Fee', id: 'california' },
         { state: 'Kentucky', due: 'June 30', form: 'Annual Report', id: 'kentucky' },

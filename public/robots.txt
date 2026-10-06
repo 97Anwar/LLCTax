@@ -2,6 +2,13 @@
 User-agent: *
 Allow: /
 
+# Google AdSense Review & Ad Verification Crawlers
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
 # Generative Engine Optimization (GEO) & AI Search Agents
 User-agent: GPTBot
 Allow: /

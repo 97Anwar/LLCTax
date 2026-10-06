@@ -44,7 +44,7 @@ export const AboutView: React.FC = () => {
           </p>
           <ul className="list-disc pl-5 space-y-1.5 text-zinc-700 dark:text-zinc-300">
             <li>California’s mandatory <strong>$800 annual minimum franchise tax</strong> (FTB 3522), owed even if your company earned zero revenue.</li>
-            <li>Delaware’s flat <strong>$300 annual tax</strong> and its brutal <strong>$200 penalty + 1.5% compounding interest</strong> after June 1.</li>
+            <li>Delaware’s flat <strong>$400 annual tax</strong> (under HB 400) and its brutal <strong>$200 penalty + 1.5% compounding interest</strong> after June 1.</li>
             <li>Florida’s <strong>$138.75 Sunbiz annual report</strong> with a mandatory, non-waivable <strong>$400 late fee</strong> assessed on May 2.</li>
             <li>The <strong>Foreign LLC Qualification Trap</strong>, where remote founders register in Delaware or Wyoming but unknowingly trigger mandatory dual-state filing requirements in their home state.</li>
           </ul>

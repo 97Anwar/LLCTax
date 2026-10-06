@@ -20,6 +20,8 @@ export interface SEOConfig {
 }
 
 export function updateSEOTags(config: SEOConfig | string, description?: string, canonicalPath?: string) {
+  if (typeof document === 'undefined') return;
+
   let title = '';
   let desc = '';
   let path = '';
@@ -61,14 +63,25 @@ export function updateSEOTags(config: SEOConfig | string, description?: string, 
   setMetaTag('property', 'og:site_name', 'LLC TaxCheck');
   setMetaTag('property', 'og:locale', 'en_US');
 
-  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://llctaxcheck.com';
-  const fullCanonicalUrl = `${origin}${path.startsWith('/') ? path : `/${path}`}`;
+  const PRODUCTION_ORIGIN = 'https://llctaxcheck.com';
+  const fullCanonicalUrl = `${PRODUCTION_ORIGIN}${path.startsWith('/') ? path : `/${path}`}`;
   setMetaTag('property', 'og:url', fullCanonicalUrl);
+
+  // Social Preview Cards (1200x630)
+  const ogImageUrl = `${PRODUCTION_ORIGIN}/og-image.png`;
+  setMetaTag('property', 'og:image', ogImageUrl);
+  setMetaTag('property', 'og:image:secure_url', ogImageUrl);
+  setMetaTag('property', 'og:image:type', 'image/png');
+  setMetaTag('property', 'og:image:width', '1200');
+  setMetaTag('property', 'og:image:height', '630');
+  setMetaTag('property', 'og:image:alt', title);
 
   // 6. Twitter Card Tags
   setMetaTag('name', 'twitter:card', 'summary_large_image');
   setMetaTag('name', 'twitter:title', title);
   setMetaTag('name', 'twitter:description', desc);
+  setMetaTag('name', 'twitter:image', ogImageUrl);
+  setMetaTag('name', 'twitter:image:alt', title);
 
   // 7. Canonical URL Link Tag
   let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
@@ -115,6 +128,7 @@ function injectStructuredData(
     document.head.appendChild(scriptEl);
   }
 
+  const PRODUCTION_ORIGIN = 'https://llctaxcheck.com';
   const schemas: any[] = [
     {
       '@context': 'https://schema.org',
@@ -125,6 +139,8 @@ function injectStructuredData(
       operatingSystem: 'All',
       browserRequirements: 'Requires JavaScript. Requires HTML5.',
       description,
+      image: `${PRODUCTION_ORIGIN}/og-image.png`,
+      screenshot: `${PRODUCTION_ORIGIN}/og-image.png`,
       offers: {
         '@type': 'Offer',
         price: '0.00',
@@ -133,6 +149,7 @@ function injectStructuredData(
       creator: {
         '@type': 'Organization',
         name: 'LLC TaxCheck Compliance Initiative',
+        url: PRODUCTION_ORIGIN,
       },
     },
   ];
@@ -162,7 +179,7 @@ function injectStructuredData(
         '@type': 'ListItem',
         position: index + 1,
         name: bc.name,
-        item: `${window.location.origin}${bc.path}`,
+        item: `${PRODUCTION_ORIGIN}${bc.path}`,
       })),
     });
   }
@@ -197,6 +214,12 @@ export function getStateSEOMeta(
     `Stripe Atlas ${stateName} LLC taxes`,
     `Foreign LLC doing business in ${stateName}`,
   ];
+
+  if (stateAbbr === 'DE' || cleanStateId === 'delaware') {
+    keywords.push('Delaware HB 400 tax increase');
+    keywords.push('Delaware LLC 400 annual tax');
+    keywords.push('Delaware LLC franchise tax 2026');
+  }
 
   if (governingForm) {
     keywords.push(`${governingForm} filing instructions`);

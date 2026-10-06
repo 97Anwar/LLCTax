@@ -44,8 +44,8 @@ test.describe('LLC TaxCheck End-to-End Suite', () => {
       const stateSelect = page.locator('select').first();
       await stateSelect.selectOption('delaware');
 
-      // Delaware base fee is $300
-      await expect(page.locator('span, div, p').filter({ hasText: '$300' }).first()).toBeVisible();
+      // Delaware base fee is $400 (under HB 400)
+      await expect(page.locator('span, div, p').filter({ hasText: '$400' }).first()).toBeVisible();
       await expect(page.locator('text=June 1').first()).toBeVisible();
 
       // Toggle delinquency checkbox

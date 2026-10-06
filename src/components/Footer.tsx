@@ -24,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onSelectState }) =
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-zinc-200 dark:border-zinc-800">
           {/* Column 1: Brand & Mission */}
-          <div className="lg:col-span-2 space-y-3">
+          <div className="space-y-3">
             <div className="flex items-center gap-2">
               <span className="font-bold text-zinc-900 dark:text-zinc-100 text-sm tracking-tight">
                 LLCTaxCheck.com
@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onSelectState }) =
                 v2026.4
               </span>
             </div>
-            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed text-xs max-w-sm">
+            <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed text-xs">
               Independent computational reference engine for US LLC annual filing fees, state franchise taxes, gross receipts surcharges, and delinquency penalties.
             </p>
             <div className="flex items-center gap-1.5 text-zinc-500 dark:text-zinc-400 text-[11px] font-medium pt-1">
@@ -91,6 +91,60 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onSelectState }) =
                   className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
                 >
                   Filing Deadlines Radar
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Editorial Guides */}
+          <div className="space-y-2.5">
+            <span className="font-semibold text-zinc-900 dark:text-zinc-200 text-xs uppercase tracking-wider block">
+              Editorial Guides
+            </span>
+            <ul className="space-y-1.5">
+              <li>
+                <a
+                  href="/guides"
+                  onClick={(e) => { e.preventDefault(); handleNav('guides', '/guides'); }}
+                  className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors font-medium text-zinc-800 dark:text-zinc-200"
+                >
+                  All Compliance Guides
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/guides/non-resident-us-llc-tax-guide"
+                  onClick={(e) => { e.preventDefault(); navigate('/guides/non-resident-us-llc-tax-guide'); }}
+                  className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+                >
+                  Non-Resident Form 5472
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/guides/delaware-vs-wyoming-vs-florida"
+                  onClick={(e) => { e.preventDefault(); navigate('/guides/delaware-vs-wyoming-vs-florida'); }}
+                  className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+                >
+                  DE vs WY vs FL True Costs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/guides/foreign-llc-qualification-rules"
+                  onClick={(e) => { e.preventDefault(); navigate('/guides/foreign-llc-qualification-rules'); }}
+                  className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+                >
+                  Foreign LLC Qualification
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/guides/how-to-reinstate-dissolved-llc"
+                  onClick={(e) => { e.preventDefault(); navigate('/guides/how-to-reinstate-dissolved-llc'); }}
+                  className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+                >
+                  Reinstatement & Revocation
                 </a>
               </li>
             </ul>
