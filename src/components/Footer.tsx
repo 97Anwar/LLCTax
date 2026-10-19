@@ -140,6 +140,33 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onSelectState }) =
               </li>
               <li>
                 <a
+                  href="/guides/california-800-franchise-tax-exemption-guide"
+                  onClick={(e) => { e.preventDefault(); navigate('/guides/california-800-franchise-tax-exemption-guide'); }}
+                  className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+                >
+                  CA $800 & AB 85 Relief
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/guides/texas-franchise-tax-no-tax-due-report"
+                  onClick={(e) => { e.preventDefault(); navigate('/guides/texas-franchise-tax-no-tax-due-report'); }}
+                  className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+                >
+                  Texas $2.47M & PIR Rules
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/guides/delaware-hb-400-tax-hike-compliance"
+                  onClick={(e) => { e.preventDefault(); navigate('/guides/delaware-hb-400-tax-hike-compliance'); }}
+                  className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+                >
+                  Delaware HB 400 $400 Tax
+                </a>
+              </li>
+              <li>
+                <a
                   href="/guides/how-to-reinstate-dissolved-llc"
                   onClick={(e) => { e.preventDefault(); navigate('/guides/how-to-reinstate-dissolved-llc'); }}
                   className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"

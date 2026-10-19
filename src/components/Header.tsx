@@ -11,6 +11,7 @@ import {
   Menu, 
   X,
   Building2,
+  BookOpen,
   Sun,
   Moon
 } from 'lucide-react';
@@ -27,7 +28,8 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
   const navItems: { id: ActiveTab; label: string; icon: React.ReactNode; path: string }[] = [
     { id: 'calculator', label: 'Calculator', icon: <Calculator className="w-3.5 h-3.5" />, path: '/' },
     { id: 'states', label: '50-State Directory', icon: <Building2 className="w-3.5 h-3.5" />, path: '/states' },
-    { id: 'comparison', label: 'Compare States', icon: <ArrowLeftRight className="w-3.5 h-3.5" />, path: '/compare' },
+    { id: 'guides', label: 'Guides', icon: <BookOpen className="w-3.5 h-3.5" />, path: '/guides' },
+    { id: 'comparison', label: 'Compare', icon: <ArrowLeftRight className="w-3.5 h-3.5" />, path: '/compare' },
     { id: 'matrix', label: 'Matrix', icon: <Layers className="w-3.5 h-3.5" />, path: '/matrix' },
     { id: 'deadlines', label: 'Deadlines', icon: <CalendarClock className="w-3.5 h-3.5" />, path: '/deadlines' },
     { id: 'methodology', label: 'Statutory Sources', icon: <ShieldCheck className="w-3.5 h-3.5" />, path: '/methodology' },
@@ -68,7 +70,9 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
           {/* Desktop Navigation - Clean, Flat Tabs */}
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => {
-              const isActive = activeTab === item.id;
+              const isActive = activeTab === item.id || 
+                (item.id === 'guides' && activeTab === 'guide-detail') ||
+                (item.id === 'states' && activeTab === 'state-detail');
               return (
                 <a
                   key={item.id}
@@ -122,7 +126,9 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
       {mobileMenuOpen && (
         <div className="lg:hidden border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 space-y-1">
           {navItems.map((item) => {
-            const isActive = activeTab === item.id;
+            const isActive = activeTab === item.id || 
+              (item.id === 'guides' && activeTab === 'guide-detail') ||
+              (item.id === 'states' && activeTab === 'state-detail');
             return (
               <a
                 key={item.id}

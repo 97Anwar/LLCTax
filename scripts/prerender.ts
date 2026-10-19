@@ -131,6 +131,39 @@ function buildJsonLd(route: RouteDefinition): string {
     });
   }
 
+  if (route.activeTab === 'guide-detail') {
+    const slug = route.routePath.replace('/guides/', '');
+    const guide = GUIDES_DATA[slug];
+    if (guide) {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: guide.title,
+        description: guide.summary,
+        author: {
+          '@type': 'Person',
+          name: guide.author.name,
+          jobTitle: guide.author.role,
+        },
+        datePublished: '2026-01-15T00:00:00Z',
+        dateModified: '2026-10-01T00:00:00Z',
+        publisher: {
+          '@type': 'Organization',
+          name: 'LLC TaxCheck Compliance Initiative',
+          url: BASE_URL,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${BASE_URL}/og-image.png`,
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonicalUrl,
+        },
+      });
+    }
+  }
+
   return JSON.stringify(schemas, null, 2);
 }
 

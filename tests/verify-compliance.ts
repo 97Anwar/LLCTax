@@ -80,7 +80,7 @@ assert(true, 'All 51 jurisdictions have detailed statutory highlights and 3-5 un
 
 console.log('\n3. Editorial Cornerstone Guides Verification:');
 const guideSlugs = Object.keys(GUIDES_DATA);
-assert(guideSlugs.length === 4, `All 4 cornerstone guides present (found: ${guideSlugs.length})`);
+assert(guideSlugs.length === 7, `All 7 cornerstone guides present (found: ${guideSlugs.length})`);
 
 for (const slug of guideSlugs) {
   const g = GUIDES_DATA[slug];
@@ -108,6 +108,9 @@ const routesToCheck = [
   'guides/delaware-vs-wyoming-vs-florida/index.html',
   'guides/foreign-llc-qualification-rules/index.html',
   'guides/how-to-reinstate-dissolved-llc/index.html',
+  'guides/california-800-franchise-tax-exemption-guide/index.html',
+  'guides/texas-franchise-tax-no-tax-due-report/index.html',
+  'guides/delaware-hb-400-tax-hike-compliance/index.html',
   'states/california/index.html',
   'states/delaware/index.html',
   'states/florida/index.html',
@@ -152,6 +155,9 @@ assert(fs.existsSync(sitemapPath), 'public/sitemap.xml exists');
 const sitemapContent = fs.readFileSync(sitemapPath, 'utf-8');
 assert(sitemapContent.includes('https://llctaxcheck.com/guides'), 'sitemap.xml includes /guides');
 assert(sitemapContent.includes('https://llctaxcheck.com/guides/non-resident-us-llc-tax-guide'), 'sitemap.xml includes guide detail URLs');
+assert(sitemapContent.includes('https://llctaxcheck.com/guides/california-800-franchise-tax-exemption-guide'), 'sitemap.xml includes CA 800 guide URL');
+assert(sitemapContent.includes('https://llctaxcheck.com/guides/texas-franchise-tax-no-tax-due-report'), 'sitemap.xml includes TX No Tax Due guide URL');
+assert(sitemapContent.includes('https://llctaxcheck.com/guides/delaware-hb-400-tax-hike-compliance'), 'sitemap.xml includes DE HB 400 guide URL');
 assert(sitemapContent.includes('https://llctaxcheck.com/states/delaware'), 'sitemap.xml includes state detail URLs');
 
 console.log(`\n========================================`);

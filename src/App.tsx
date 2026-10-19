@@ -16,6 +16,8 @@ import { StateComparisonView } from './components/StateComparisonView';
 import { ComplianceMatrixView } from './components/ComplianceMatrixView';
 import { DeadlinesRadarView } from './components/DeadlinesRadarView';
 import { MethodologyView } from './components/MethodologyView';
+import { GuidesView } from './components/GuidesView';
+import { GuideDetailPage } from './components/GuideDetailPage';
 import { PrivacyPolicyView } from './components/PrivacyPolicyView';
 import { TermsOfServiceView } from './components/TermsOfServiceView';
 import { LegalDisclaimerView } from './components/LegalDisclaimerView';
@@ -90,6 +92,12 @@ export default function App() {
           else if (tab === 'matrix') navigate('/matrix');
           else if (tab === 'deadlines') navigate('/deadlines');
           else if (tab === 'methodology') navigate('/methodology');
+          else if (tab === 'guides') navigate('/guides');
+          else if (tab === 'privacy') navigate('/privacy');
+          else if (tab === 'terms') navigate('/terms');
+          else if (tab === 'disclaimer') navigate('/disclaimer');
+          else if (tab === 'about') navigate('/about');
+          else if (tab === 'contact') navigate('/contact');
         }}
       />
 
@@ -107,6 +115,16 @@ export default function App() {
         {/* 50-State SEO Hub & Directory (/states) */}
         {route.tab === 'states' && (
           <StatesDirectoryView />
+        )}
+
+        {/* Editorial Guides Hub (/guides) */}
+        {route.tab === 'guides' && (
+          <GuidesView />
+        )}
+
+        {/* Editorial Guide Article Detail (/guides/:slug) */}
+        {route.tab === 'guide-detail' && (
+          <GuideDetailPage slug={route.guideSlug || 'non-resident-us-llc-tax-guide'} />
         )}
 
         {/* Home / Calculator View (/ or /calculator) */}
@@ -194,6 +212,7 @@ export default function App() {
           else if (tab === 'matrix') navigate('/matrix');
           else if (tab === 'deadlines') navigate('/deadlines');
           else if (tab === 'methodology') navigate('/methodology');
+          else if (tab === 'guides') navigate('/guides');
           else if (tab === 'privacy') navigate('/privacy');
           else if (tab === 'terms') navigate('/terms');
           else if (tab === 'disclaimer') navigate('/disclaimer');
