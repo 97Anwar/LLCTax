@@ -6,7 +6,7 @@ An authoritative, client-side 50-state LLC annual franchise tax and periodic rep
 
 - **51-Jurisdiction Statutory Accuracy**: Full coverage for all 50 US states plus Washington D.C., updated with current laws (including Delaware HB 400 $400 flat franchise tax, Pennsylvania Act 122 $7 annual report, California FTB 3522 $800 minimum franchise tax + fee schedule, Florida $138.75 report fee + $400 penalty, and Texas $2.47M revenue threshold).
 - **Interactive Multi-Tier Simulator**: Calculates mandatory Secretary of State base legal fees, gross receipts surcharges, pass-through net profits, and compounding penalty interest.
-- **Static Pre-Rendering (SSG)**: 67 fully compiled static HTML routes in `dist/` allowing search engines (Googlebot, Bingbot) and Google AdSense verification crawlers (`Mediapartners-Google`) to index rich content without executing JavaScript.
+- **Static Pre-Rendering (SSG)**: 70 fully compiled static HTML routes in `dist/` allowing search engines (Googlebot, Bingbot) and Google AdSense verification crawlers (`Mediapartners-Google`) to index rich content without executing JavaScript.
 - **AdSense & SEO Optimized**:
   - Valid `WebApplication`, `FAQPage`, `BreadcrumbList`, and `Article` Schema.org JSON-LD structured data.
   - CLS-proof ad containers with pre-allocated bounding boxes (`AdSlot.tsx`).
@@ -55,7 +55,7 @@ Runs the application locally at `http://localhost:3000`.
 npm run build
 ```
 
-This command runs `vite build` and executes `scripts/prerender.ts` to generate all 67 static HTML routes into the `dist/` folder.
+This command runs `vite build` and executes `scripts/prerender.ts` to generate all 70 static HTML routes into the `dist/` folder.
 
 ### Run Compliance Verification Suite
 
